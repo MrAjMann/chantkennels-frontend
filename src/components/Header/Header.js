@@ -5,7 +5,7 @@ import logo from "../../assets/Logo.svg";
 
 const NavContainer = styled.div`
   height: 10vh;
-  margin: 0px 60px;
+  margin: 10px 60px;
   opacity: 80%;
   display: flex;
   align-items: center;
@@ -31,11 +31,19 @@ const NavLinks = styled.ul`
 
 const NavLinkItems = styled(Link)`
   text-decoration: none;
+  position: relative;
   color: #fff;
   font-size: 24px;
   margin: 0rem 1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  padding: 5px 5px;
+  &:hover {
+    transition: 1s;
+    border-radius: 5px;
+    background: #4c9e81;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+  }
 `;
 
 const Header = () => {
