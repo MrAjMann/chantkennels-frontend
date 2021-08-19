@@ -56,10 +56,10 @@ const Header = () => {
         <Router>
           <NavBar>
             <NavLinks>
-              <NavLinkItems>About</NavLinkItems>
-              <NavLinkItems>Services</NavLinkItems>
-              <NavLinkItems>SignUp</NavLinkItems>
-              <NavLinkItems>Login</NavLinkItems>
+              <NavLinkItems to="/about">About</NavLinkItems>
+              <NavLinkItems to="/services">Services</NavLinkItems>
+              <NavLinkItems to="/sign-up">SignUp</NavLinkItems>
+              <NavLinkItems to="/">Login</NavLinkItems>
             </NavLinks>
           </NavBar>
         </Router>
