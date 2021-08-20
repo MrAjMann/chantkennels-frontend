@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components";
 import { theme, Container,Styles } from './utils/globalStyles';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from "./pages/LandingPage";
-import Header from "./components/landingPageComponents/Header";
-
+import NavBar from "./components/landingPageComponents/NavBar";
+import Login from './pages/LoginPage'
 
 
 function App() {
@@ -12,11 +12,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <Styles /> 
       <BrowserRouter>
-      <Header />
+      <NavBar />
       <Switch>
-
           <Route exact path="/" component={Home} />
-          
+          <Route exact path="/login" component={Login}/>
         <Container>
         </Container>
       
