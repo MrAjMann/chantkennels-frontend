@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionContainer} from '../../utils/globalStyles'
+import { SectionContainer} from '../../globalStyles'
 import  {TestimonialCard}  from '../TestimonialCard'
 
 
