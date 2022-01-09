@@ -5,14 +5,16 @@ import {ServiceCardA, ServiceCardB, ServiceCardC} from '../ServiceCards'
 
 const Services = ({title}) => {
     return (
+        <>
+                <Title>Services</Title>
          <Wrapper>
             <InnerWrapper>
-                {/* <Title>Services</Title> */}
                 <ServiceCardA />
                 {/* <ServiceCardB /> */}
                 {/* <ServiceCardC /> */}
             </InnerWrapper>
-        </Wrapper>
+            </Wrapper>
+            </>
     )
 }
 
@@ -32,7 +34,9 @@ margin: auto;
 justify-content: space-between;
 `;
 
-
+const Title = styled.h3`
+font-size:36px;
+`;
 // const Service = styled.div`
 // width: calc(33% - 20px);
 // `;

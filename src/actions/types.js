@@ -3,7 +3,7 @@ export const ADD_PET = "ADD_PET";
 export const DELETE_PETS = "DELETE_PET";
 export const PETS_LOADING = "PETS_LOADING";
 
-//
+// User Actions
 
 export const USER_LOADING = "USER_LOADING";
 export const USER_LOADED = "USER LOADED";

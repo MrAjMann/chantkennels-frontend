@@ -25,13 +25,17 @@ max-height:100%;
 display: flex;
 justify-content:center;
 flex-wrap:wrap;
+
+@media (max-width: 768px) {
+width: 100%;
+}
 `;
 
 
 
 const Title = styled.h1`
-font-size:84px;
-margin:5rem 15rem;
+font-size:36px;
+/* margin:5rem 15rem; */
 font-family: 'Slabo 13px', serif;
 font-weight:400;
 letter-spacing:6px;
