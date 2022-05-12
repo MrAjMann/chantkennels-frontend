@@ -11,7 +11,7 @@ export function TestimonialCard() {
     return (
         <Container>
         <CardContainer>
-            <Title>Name Here</Title>
+            {/* <Title>Name Here</Title> */}
                 <RatingBox>
                     <FontAwesomeIcon icon={faStar} />
                     <FontAwesomeIcon icon={faStar} />

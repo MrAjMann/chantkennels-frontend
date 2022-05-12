@@ -2,7 +2,7 @@ import React from 'react'
 import { SectionContainer, Title } from '../globalStyles'
 import { Form, InnerFormWrapper, Label, Input, FormTitle } from '../components/formElements/formStyle'
 import { EmptyButtonWrapper,Button } from '../components/button/buttonStyle'
-import { Container, OuterFormContainer } from '../components/layout/layoutStyles'
+// import { Container, OuterFormContainer } from '../components/layout/layoutStyles'
 
 const AdminLogin = () => {
     return (

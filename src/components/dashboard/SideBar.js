@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useGlobalState } from "../../utils/globalContext";
 
 import styled from "styled-components";
-import { theme, LoggedInContainer } from "../../globalStyles";
+import {  LoggedInContainer } from "../../globalStyles";
 import { Link } from "react-router-dom";
 
 

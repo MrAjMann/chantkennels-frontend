@@ -1,132 +1,284 @@
 import React from "react";
-
 import styled from "styled-components";
-import { theme, SectionContainer} from '../../globalStyles'
+import { Link } from "react-router-dom";
+import { Link as LinkS } from "react-scroll";
+import SimpleMap from "./Map";
+import logo from "../../assets/Logo.svg";
 
+import {
+  FaFacebook,
+  FaYoutube,
+  FaPhone,
+  FaLinkedin,
+  FaTwitter,
+  FaSitemap,
+  FaEnvelope,
+} from "react-icons/fa";
+const FooterContainer = styled.footer`
+  background: #101522;
+`;
 
+const FooterWrapper = styled.div`
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+`;
+
+const FooterLinksContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 820px) {
+    padding-top: 32px;
+  }
+`;
+
+const FooterLinksWrapper = styled.div`
+  display: flex;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+  }
+`;
+
+const FooterLinkItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 300px;
+  box-sizing: border-box;
+  color: #fff;
+
+  @media screen and (max-width: 420px) {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+  }
+`;
+const FooterMapArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 16px;
+  text-align: left;
+  width: 460px;
+  height: 200px;
+  box-sizing: border-box;
+  color: #fff;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+    margin: 0;
+    padding: 10px;
+    /* width: 70%; */
+    /* height: 300px;
+    width: 420px; */
+  }
+`;
+
+const FooterLinkTitle = styled.h1`
+  font-size: 18px;
+  margin-bottom: 16px;
+`;
+
+const FooterLink = styled(LinkS)`
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  letter-spacing: 2px;
+  &:hover {
+    color: #01bf71;
+    transition: 0.3s ease-out;
+  }
+`;
+const FooterText = styled.div`
+  color: #fff;
+  letter-spacing: 2px;
+  /* cursor: pointer; */
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+
+  /* &:hover {
+    color: #01bf71;
+    transition: 0.3s ease-out;
+  } */
+`;
+const ExternalFooterLink = styled.a`
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+
+  &:hover {
+    color: #01bf71;
+    transition: 0.3s ease-out;
+  }
+`;
+// const Map = styled.img``;
+
+const SocialMedia = styled.section`
+  max-width: 1000px;
+  width: 100%;
+`;
+
+const SocialMediaWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+  }
+`;
+
+const SocialLogo = styled.a`
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: bold;
+`;
+
+const LogoImage = styled.img`
+  margin: auto;
+  justify-self: center;
+  height: 90%;
+`;
+const WebsiteRights = styled.small`
+  color: #fff;
+  margin-bottom: 16px;
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 240px;
+`;
+
+const SocialIconLink = styled.a`
+  color: #fff;
+  font-size: 24px;
+`;
 
 const Footer = () => {
-
   return (
-    
-    <SectionContainer style={{height:"70vh"}}>
-    <ThreeColumnContainer>
+    <FooterContainer>
+      <FooterWrapper>
+        <FooterLinksContainer>
+          <FooterLinksWrapper>
+            <FooterLinkItems>
+              <FooterLinkTitle>Contact Details</FooterLinkTitle>
+              <FooterLink>
+                {" "}
+                <FaPhone /> 0447074186
+              </FooterLink>
+              <FooterLink>
+                <FaEnvelope /> chantkennels@hotmail.com
+              </FooterLink>
+            </FooterLinkItems>
+          </FooterLinksWrapper>
+          <FooterLinksWrapper>
+            <FooterLinkItems>
+              <FooterLinkTitle>About Us</FooterLinkTitle>
+              {/* <FooterText></FooterText> */}
+              <FooterLink to="services">Services</FooterLink>
+              <FooterLink to="about">About</FooterLink>
+              <FooterLink to="testimonials">Testimonials</FooterLink>
+              <FooterLink to="terms">Terms of Service</FooterLink>
+            </FooterLinkItems>
+          </FooterLinksWrapper>
 
-      <LeftCol>
-        <ColHeading>Opening Hours</ColHeading>
-          <InnerColumnContainer>
-            <ColSubHeading>Mon-Fri</ColSubHeading>
-            <ColInnerText>8:00am to 12:00pm</ColInnerText>
-            <ColInnerText>1:00pm to 5:00pm</ColInnerText>
-          </InnerColumnContainer>
-          <InnerColumnContainer>
-            <ColSubHeading>Sat-Sun</ColSubHeading>
-            <ColInnerText>9:00am to 12:00pm</ColInnerText>
+          <FooterLinksWrapper>
+            <FooterMapArea>
+              <FooterLinkTitle>Location</FooterLinkTitle>
+              <SimpleMap />
+            </FooterMapArea>
+          </FooterLinksWrapper>
 
-          </InnerColumnContainer>
-      </LeftCol>
-      <MidCol>
-        <ColHeading>Location</ColHeading>
-        <MapContainer>
-        <ColInnerText>15 Sprott Rd, Ellinthorp QLD 4362</ColInnerText>
-          <Map src="https://maps.googleapis.com/maps/api/staticmap?center=15+sprott+rd,Ellinthorp,QLD&zoom=15&size=600x300&maptype=roadmap
-              &markers=color:red%7Clabel:S%7C-28.051899011701238,151.9242423
-              &key=AIzaSyC10lIxPMbf8-J709s68t6Ngo6ThgveTx8"></Map>
-       </MapContainer>
+          <FooterLinksWrapper>
+            <FooterLinkItems>
+              <FooterLinkTitle>Social Media</FooterLinkTitle>
+              <ExternalFooterLink
+                href="https://www.facebook.com/chantkennels/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Facebook
+              </ExternalFooterLink>
+              <ExternalFooterLink
+                href="https://www.instagram.com/chantkennels/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Instagram
+              </ExternalFooterLink>
+            </FooterLinkItems>
+          </FooterLinksWrapper>
+        </FooterLinksContainer>
+        <SocialMedia>
+          <SocialMediaWrap>
+            <SocialLogo
+              href="https://www.chantkennels.com.au/"
+              target="_blank"
+              aria-label="Website"
+            >
+              <LogoImage src={logo} alt="Chant Kennels Logo" />
+            </SocialLogo>
 
-      </MidCol>
-      <RightCol>
-        <ColHeading>Social Media</ColHeading>
-          <SocialsContainer>
-              <SocialLink href='https://www.facebook.com/chantkennels-346444793261572' target="_blank">Facebook</SocialLink>
-              <SocialLink href='https://www.instagram.com/chantkennels/?hl=en' target="_blank">Instagram</SocialLink>
-          </SocialsContainer>
-      </RightCol>
+            <WebsiteRights>
+              Website by{" "}
+              <ExternalFooterLink
+                href="http://amwebsolutions.com.au/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                AM Website Solutions
+              </ExternalFooterLink>
+            </WebsiteRights>
+            <WebsiteRights>
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </WebsiteRights>
 
-    </ThreeColumnContainer>
-    <BottomFooterContainer>
-    <ColInnerText>&copy; AM Website Solutions</ColInnerText>
-    </BottomFooterContainer>
-  </SectionContainer>
-  
+            <SocialIcons>
+              <SocialIconLink
+                href="https://www.facebook.com/amwebsitesol"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <FaFacebook />
+              </SocialIconLink>
+
+              {/* <SocialIconLink href="/" target="_blank" aria-label="Youtube">
+                <FaYoutube />
+              </SocialIconLink> */}
+              <SocialIconLink href="/" target="_blank" aria-label="Twitter">
+                <FaTwitter />
+              </SocialIconLink>
+              <SocialIconLink href="/" target="_blank" aria-label="LinkedIn">
+                <FaLinkedin />
+              </SocialIconLink>
+            </SocialIcons>
+          </SocialMediaWrap>
+        </SocialMedia>
+      </FooterWrapper>
+    </FooterContainer>
   );
 };
 
 export default Footer;
-
-
-const ThreeColumnContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-areas: "LeftCol MidCol RightCol";
-height:90%;
-`;
-const InnerColumnContainer = styled.div`
-margin: 3rem 0;
-// height:80%;
-`;
-const LeftCol = styled.div`
-
-grid-area: LeftCol;
-`;
-const MidCol = styled.div`
-
-grid-area: MidCol;
-
-`;
-const RightCol = styled.div`
-
-grid-area: RightCol;
-
-`;
-
-const ColHeading = styled.h3`
-font-size: 36px;
-text-align:center;
-margin-bottom:25%;
-`;
-const ColSubHeading = styled.h5`
-font-size: 18px;
-text-align:center;
-`;
-const ColInnerText = styled.p`
-font-size: 14px;
-text-align:center;
-color: ${theme.LightTxt}
-`;
-const MapContainer = styled.div`
-display:flex;
-
-flex-direction: column;
-justify-content:center;
-align-items:center;
-`;
-
-const SocialsContainer = styled.div`
-display:flex;
-flex-direction: column;
-justify-content:center;
-align-items:center;
-
-`;
-
-const SocialLink = styled.a`
-font-size:36px;
-margin: 3rem 0;
-text-decoration:none;
-font-weight:600;
-`;
-
-const BottomFooterContainer = styled.div`
-display: flex;
-justify-content:center;
-align-items:center;
-width: 100%;
-height: 9%;
-
-`;
-
-
-const Map = styled.img`
-
-`;

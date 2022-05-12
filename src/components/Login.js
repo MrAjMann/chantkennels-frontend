@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
+import styled from 'styled-components';
 import { validEmail, validPassword } from "../utils/validators";
 import { useGlobalState } from "../utils/globalContext";
 import {useHistory} from 'react-router-dom'
-import {  SectionContainer, Title } from '../globalStyles'
+// import {  SectionContainer, Title } from '../globalStyles'
 import { Form, InnerFormWrapper, Label,Input, FormTitle } from './formElements/formStyle'
 import { EmptyButtonWrapper,Button } from './button/buttonStyle'
-import { Container, OuterFormContainer } from './layout/layoutStyles'
+// import { Container, OuterFormContainer } from './layout/layoutStyles'
+
+
+
 export default function LogIn({callback}){
     let history = useHistory()
 
@@ -59,10 +63,10 @@ export default function LogIn({callback}){
         }
     }
     return (
-        <SectionContainer>
-            <Title>Welcome to Chant Kennels</Title>
-            <Container>
-                <OuterFormContainer>
+        <>
+
+            <LoginContainer>
+                <LoginWrapper>
                     <FormTitle>Log In</FormTitle>
                     {serverError && <p style={{color:"red"}}>{serverError}</p>}
                     <Form>
@@ -81,20 +85,47 @@ export default function LogIn({callback}){
                             <Button onClick={handleSubmit}>Login</Button>
                         </EmptyButtonWrapper>
                     </Form>
-                </OuterFormContainer>
-            </Container>
-        </SectionContainer>
+                </LoginWrapper>
+            </LoginContainer>
+        </>
     )
 }
 
+const LoginContainer = styled.div`
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(142 90 170);
+  /* background: radial-gradient(circle, rgba(157,40,185,1) 0%, rgba(142,91,170,1) 42%, rgba(105,60,98,1) 100%); */
+
+  @media screen and (max-width: 768px) {
+    height: 1100px;
+  }
+  @media screen and (max-width: 480px) {
+    height: 1300px;
+  }
+`;
 
 
+const LoginWrapper = styled.div`
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  grid-gap: 16px;
+  padding: 0 50px;
 
-
-
-
-
-
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+`;
 
 
 
